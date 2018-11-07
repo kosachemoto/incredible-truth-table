@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Edit from './../../components/edit';
-import VariablesList from './../../components/variablesList';
-import './App.css';
+import React from 'react';
+import { EditComponent } from '../../components';
+import { VariablesListComponent } from './../../components';
+import './app.container.css';
 
-class App extends Component {
+export class AppContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -46,11 +46,9 @@ class App extends Component {
     return (
       <div className="app-component">
         <h1 className="app-header">Incredible Truth Table</h1>
-        <Edit data={this.state.dataString} onChange={this.onEditChange} />
-        <VariablesList data={this.state.variables} />
+        <EditComponent data={this.state.dataString} onChange={this.onEditChange} />
+        <VariablesListComponent data={this.state.variables} />
       </div>
     )
   }
 }
-
-export default App;

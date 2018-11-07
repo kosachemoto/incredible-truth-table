@@ -1,1 +1,1 @@
-export { default } from './Edit';
+export * from './edit.component';

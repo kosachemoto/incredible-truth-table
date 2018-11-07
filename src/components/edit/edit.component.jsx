@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './Edit.css';
+import React from 'react';
+import './edit.component.css';
 
-class Edit extends Component {
+export class EditComponent extends React.Component {
   render() {
     return (
       <div className="edit-component">
@@ -10,5 +10,3 @@ class Edit extends Component {
     );
   }
 }
-
-export default Edit;

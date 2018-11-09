@@ -1,6 +1,8 @@
 import React from 'react';
 import { EditComponent } from '../../components';
 import { VariablesListComponent } from './../../components';
+import { DataTableComponent } from './../../components';
+import { ExpressionService } from './../../services';
 import './app.container.css';
 
 export class AppContainer extends React.Component {
@@ -8,33 +10,33 @@ export class AppContainer extends React.Component {
     super(props);
 
     this.state = {
-      dataString: "",
+      expression: "",
       variables: []
     }
 
     this.onEditChange = this.onEditChange.bind(this);
-    this.parseDataString = this.parseDataString.bind(this);
+    this.parseExpression = this.parseExpression.bind(this);
   }
 
   onEditChange(event) {
     const value = event.target.value;
 
     this.setState({
-      dataString: value,
-      variables: this.parseDataString(value)
+      expression: value,
+      variables: this.parseExpression(value)
     });
   }
 
   componentDidMount() {
     this.setState(state => ({
-      variables: this.parseDataString(state.dataString)
+      variables: this.parseExpression(state.expression)
     }));
   }
 
-  parseDataString(dataString) {
+  parseExpression(expression) {
     const regexp = /[\s!&|()=<>]/g;
     
-    const variablesList = dataString.split(regexp)
+    const variablesList = expression.split(regexp)
       .filter((element, index, self) => {
         return element !== "" && self.indexOf(element) === index; 
       });
@@ -46,8 +48,10 @@ export class AppContainer extends React.Component {
     return (
       <div className="app-component">
         <h1 className="app-header">Incredible Truth Table</h1>
-        <EditComponent data={this.state.dataString} onChange={this.onEditChange} />
+        <EditComponent data={this.state.expression} onChange={this.onEditChange} />
         <VariablesListComponent data={this.state.variables} />
+        <DataTableComponent data={this.state.variables} />
+        <ExpressionService />
       </div>
     )
   }

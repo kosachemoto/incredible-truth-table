@@ -18,5 +18,45 @@ export const fixtures = [
       expression: "aaa && a || aa",
     },
     expected: ["true", "false", "true", "true"]
+  },
+  {
+    index: 2,
+    enabled: true,
+    props: {
+      variables: ["a", "b"],
+      values: "0",
+      expression: "a && b",
+    },
+    expected: ["false", "false", "false"]
+  },
+  {
+    index: 3,
+    enabled: true,
+    props: {
+      variables: ["a", "b"],
+      values: "1",
+      expression: "a && b",
+    },
+    expected: ["false", "true", "false"]
+  },
+  {
+    index: 4,
+    enabled: true,
+    props: {
+      variables: ["a", "b"],
+      values: "10",
+      expression: "a && b",
+    },
+    expected: ["true", "false", "false"]
+  },
+  {
+    index: 5,
+    enabled: true,
+    props: {
+      variables: ["a", "b"],
+      values: "11",
+      expression: "a && b",
+    },
+    expected: ["true", "true", "true"]
   }
 ]

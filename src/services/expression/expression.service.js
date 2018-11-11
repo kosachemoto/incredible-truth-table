@@ -1,4 +1,17 @@
 export class ExpressionService {
+  getCalculatedTableValues(variables, expression) {
+    const varLength = variables.length;
+    const rows = Math.pow(2, varLength);
+    let result = [];
+
+    for (let i = 0; i < rows; i++) {
+      const values = i.toString(2);
+      result.push(this.getCalculatedRowValues(variables, values, expression));
+    }
+
+    return result;
+  }
+
   getCalculatedRowValues(variables, values, expression) {
     const dataObject = this.getDataObject(variables, values);
     const execExpression = this.getExecExpression(variables, values, expression);

@@ -8,18 +8,18 @@ export class DataTableComponent extends React.Component {
         <table className="data-table_table">
           <thead>
             <tr className="data-table_row">
-              {this.props.data.map((variable, index) => (
+              {this.props.dataHeader.map((variable, index) => (
                 <th key={index} className="data-table_header">{variable}</th>
               ))}
             </tr>
           </thead>
-          {/* <tbody>
-            <tr className="data-table_row">
+          <tbody>
+            {/* <tr className="data-table_row">
               <td className="data-table_cell">false</td>
               <td className="data-table_cell">true</td>
               <td className="data-table_cell">true</td>
-            </tr>
-          </tbody> */}
+            </tr> */}
+          </tbody>
         </table>
       </div>
     );

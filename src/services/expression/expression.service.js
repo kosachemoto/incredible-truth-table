@@ -1,5 +1,9 @@
 export class ExpressionService {
-  getCalculatedTableValues(variables, expression) {
+  getTHead(variables, expression) {
+    return [...variables, expression];
+  }
+
+  getCalculatedTBodyValues(variables, expression) {
     const varLength = variables.length;
     const rows = Math.pow(2, varLength);
     let result = [];
@@ -21,14 +25,19 @@ export class ExpressionService {
       return result;
     }, []);
 
-    arr.push(new Boolean(+eval(execExpression)).toString());
+    try {
+      arr.push(new Boolean(+eval(execExpression)).toString());
+    } 
+    catch(e) {
+      console.warn(e.message);
+    }
 
     return arr;
   }
 
   getExecExpression(variables, values, expression) {
     const dataObject = this.getDataObject(variables, values);
-    const sortedVariables = variables.slice().sort((a, b) => b.length - a.length);
+    const sortedVariables = [...variables].sort((a, b) => b.length - a.length);
 
     return sortedVariables.reduce((execExpression, variable) => {
       return execExpression.replace(new RegExp(variable, "g"), dataObject[variable])

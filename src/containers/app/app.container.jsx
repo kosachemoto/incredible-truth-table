@@ -6,6 +6,8 @@ import { ExpressionService } from './../../services';
 import './app.container.css';
 
 export class AppContainer extends React.Component {
+  expressionService = new ExpressionService();
+
   constructor(props) {
     super(props);
 
@@ -13,6 +15,7 @@ export class AppContainer extends React.Component {
       expression: "",
       variables: []
     }
+
 
     this.onEditChange = this.onEditChange.bind(this);
     this.parseExpression = this.parseExpression.bind(this);
@@ -50,8 +53,9 @@ export class AppContainer extends React.Component {
         <h1 className="app-header">Incredible Truth Table</h1>
         <EditComponent data={this.state.expression} onChange={this.onEditChange} />
         <VariablesListComponent data={this.state.variables} />
-        <DataTableComponent data={this.state.variables} />
-        <ExpressionService />
+        <DataTableComponent 
+          dataHeader={this.expressionService.getTHead(this.state.variables, this.state.expression)} 
+          dataBody={this.expressionService.getCalculatedTBodyValues(this.state.variables, this.state.expression)} />
       </div>
     )
   }

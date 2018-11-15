@@ -53,9 +53,9 @@ export const fixtures = [
     index: 5,
     enabled: true,
     props: {
-      variables: ["a", "b"],
+      variables: ["a", "aa"],
       values: "11",
-      expression: "a && b",
+      expression: "aa && a",
     },
     expected: ["true", "true", "true"]
   }

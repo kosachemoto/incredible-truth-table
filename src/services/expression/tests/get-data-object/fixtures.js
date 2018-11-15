@@ -6,7 +6,7 @@ export const fixtures = [
       variables: ["a", "b", "c"],
       values: "101"
     },
-    expected: {"a": "true", "b": "false", "c": "true"}
+    expected: {"a": "1", "b": "0", "c": "1"}
   },
   {
     index: 1,
@@ -15,7 +15,7 @@ export const fixtures = [
       variables: ["a", "b", "c"],
       values: "1"
     },
-    expected: {"a": "false", "b": "false", "c": "true"}
+    expected: {"a": "0", "b": "0", "c": "1"}
   },
   {
     index: 2,
@@ -24,7 +24,7 @@ export const fixtures = [
       variables: ["a", "b", "c"],
       values: "0"
     },
-    expected: {"a": "false", "b": "false", "c": "false"}
+    expected: {"a": "0", "b": "0", "c": "0"}
   },
   {
     index: 3,
@@ -43,6 +43,6 @@ export const fixtures = [
       values: "101",
       expression: "aaa && a || aa",
     },
-    expected: {"a": "false", "aa": "true", "aaa": "true"}
+    expected: {"a": "0", "aa": "1", "aaa": "1"}
   }
 ];

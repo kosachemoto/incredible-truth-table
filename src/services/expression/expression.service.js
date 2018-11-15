@@ -17,11 +17,11 @@ export class ExpressionService {
     const execExpression = this.getExecExpression(variables, values, expression);
     
     let arr = variables.reduce((result, variable) => {
-      result.push(dataObject[variable]);
+      result.push(new Boolean(+dataObject[variable]).toString());
       return result;
     }, []);
 
-    arr.push(eval(execExpression).toString());
+    arr.push(new Boolean(+eval(execExpression)).toString());
 
     return arr;
   }
@@ -40,7 +40,7 @@ export class ExpressionService {
     const correctedValues = values.padStart(varLength, "0");
 
     return variables.reduce((obj, variable, index) => {
-      const resultValue = new Boolean(+correctedValues[index]).toString();
+      const resultValue = correctedValues[index];
       
       obj[variable] = resultValue;
       return obj;

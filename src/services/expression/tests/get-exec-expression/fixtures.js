@@ -7,7 +7,7 @@ export const fixtures = [
       values: "101",
       expression: "a && b || c",
     },
-    expected: "true && false || true"
+    expected: "1 && 0 || 1"
   },
   {
     index: 1,
@@ -17,6 +17,6 @@ export const fixtures = [
       values: "101",
       expression: "aaa && a || aa",
     },
-    expected: "true && false || true"
+    expected: "1 && 0 || 1"
   }
 ]

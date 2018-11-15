@@ -5,9 +5,9 @@ export const fixtures = [
     props: { 
       variables: [
         "a", 
-        "b"
+        "aa"
       ],
-      expression: "a && b"
+      expression: "a && aa"
     },
     expected: [
       ["false", "false", "false"],

@@ -28,7 +28,7 @@ export class InputFormContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="input-form">
         <InputComponent data={this.expression} onChange={this.onInputChange} />
         <ButtonComponent onClick={this.onButtonClick} />
       </div>

@@ -53,11 +53,7 @@ export class AppContainer extends React.Component {
       <div className="app-component">
         <h1 className="app-header">Incredible Truth Table</h1>
         <InputFormContainer onChange={this.onInputFormChange} />
-        <DataGridContainer />
-        <VariablesListComponent data={this.state.variables} />
-        <DataTableComponent 
-          dataHeader={this.expressionService.getTHead(this.state.variables, this.state.expression)} 
-          dataBody={this.expressionService.getCalculatedTBodyValues(this.state.variables, this.state.expression)} />
+        <DataGridContainer data={this.state.expression} />
       </div>
     )
   }

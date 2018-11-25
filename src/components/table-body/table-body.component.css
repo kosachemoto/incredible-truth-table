@@ -1,0 +1,8 @@
+.table-body {
+  background-color: papayawhip;
+}
+
+.table-body__cell {
+  padding: 10px 15px;
+  text-align: center;
+}

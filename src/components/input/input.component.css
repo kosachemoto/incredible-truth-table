@@ -1,0 +1,11 @@
+.input {
+  display: inline-block;
+}
+
+.input__input {
+  margin: 1px;
+  padding: 10px 15px;
+  background-color: papayawhip;
+  font-size: 16px;
+  border: none;
+}

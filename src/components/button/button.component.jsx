@@ -5,7 +5,7 @@ export class ButtonComponent extends React.Component {
   render() {
     return (
       <>
-        <button onClick={this.props.onClick}>Click me</button>
+        <button className="button__button" onClick={this.props.onClick}>Click me</button>
       </>
     )
   }

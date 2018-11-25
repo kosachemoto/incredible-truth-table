@@ -8,11 +8,10 @@ import './table.component.css';
 export class TableComponent extends React.Component {
   render() {
     return (
-      <>
-        This is TableComponent Component!
-        <TableHeaderComponent />
-        <TableBodyComponent />
-      </>
+      <table className="table">
+        <TableHeaderComponent data={this.props.header} />
+        <TableBodyComponent data={this.props.body} />
+      </table>
     )
   }
 }

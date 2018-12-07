@@ -6,7 +6,7 @@ describe("ExpressionService.execFunctionBy()", () => {
     test(`test: ${e.index}`, () => {
       const calculated = ExpressionService.execFunctionBy(e.props.expression);
 
-      expect(calculated).toBe(0);
+      expect(calculated.toString()).toBe(e.expected);
     })
   });
 })

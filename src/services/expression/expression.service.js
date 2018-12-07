@@ -20,6 +20,8 @@ export class ExpressionService {
   // Return executable function by `expression`
   // with appropriate count of variables-parameters
   static execFunctionBy(expression) {
-    return 0;
+    const variables = this.parse(expression);
+
+    return new Function([...variables], `return ${expression}`);
   } 
 }

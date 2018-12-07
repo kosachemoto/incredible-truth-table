@@ -5,6 +5,6 @@ export const fixtures = [
     props: { 
       expression: "a && b || c"
     },
-    expected: 0
+    expected: new Function("a", "b", "c", "return a && b || c").toString()
   }
 ]

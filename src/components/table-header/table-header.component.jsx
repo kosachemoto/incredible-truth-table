@@ -2,10 +2,6 @@ import React from 'react';
 import './table-header.component.css';
 
 export class TableHeaderComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <thead className="table-header">

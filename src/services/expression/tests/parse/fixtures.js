@@ -30,5 +30,21 @@ export const fixtures = [
       expression: "a && true || aa"
     },
     expected: ["a", "aa"]
+  },
+  {
+    index: 4,
+    enabled: true,
+    props: { 
+      expression: "a"
+    },
+    expected: ["a"]
+  },
+  {
+    index: 5,
+    enabled: true,
+    props: { 
+      expression: ""
+    },
+    expected: []
   }
 ]

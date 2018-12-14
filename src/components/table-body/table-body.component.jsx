@@ -8,7 +8,7 @@ export class TableBodyComponent extends React.Component {
         { this.props.data.map((rowData, index) => (
           <tr key={index}>
             { rowData.map((element, index) => (
-              <td key={index} className="table-body__cell">{ element.toString() }</td>
+              <td key={index} className={element ? "table-body__cell color-true" : "table-body__cell color-false"}>{ element.toString() }</td>
             )) }
           </tr>
         )) }

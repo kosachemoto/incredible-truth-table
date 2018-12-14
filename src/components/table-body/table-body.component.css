@@ -6,3 +6,11 @@
   padding: 10px 15px;
   text-align: center;
 }
+
+.color-true { 
+  background-color: lightgreen;
+}
+
+.color-false { 
+  background-color: lightcoral;
+}

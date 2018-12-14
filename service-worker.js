@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/incredible-truth-table/precache-manifest.41b2875c3280b10728f9627765542ab6.js"
+  "/incredible-truth-table/precache-manifest.ab23fc5e18ad0e497d798ad3a9d21e1e.js"
 );
 
 workbox.clientsClaim();
